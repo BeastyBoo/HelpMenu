@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DynamicHelpCommand:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DynamicHelpCommand_jar</output-path>
+    <root id="archive" name="DynamicHelpCommand.jar">
+      <element id="module-output" name="DynamicHelpCommand" />
+    </root>
+  </artifact>
+</component>
