@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class HelpCommand implements CommandExecutor
 {
 
-    Menu mainMenu = new MainMenu();
+
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
@@ -20,6 +20,7 @@ public class HelpCommand implements CommandExecutor
 
             Player player = (Player) sender;
 
+            Menu mainMenu = new MainMenu(player);
             mainMenu.open(player);
 
         }
