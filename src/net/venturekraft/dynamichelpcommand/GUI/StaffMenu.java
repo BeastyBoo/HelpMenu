@@ -20,20 +20,20 @@ public class StaffMenu extends Menu
 
         Processes processes = new Processes();
 
-        String[] test = Main.getMain().getStaffFile().getKeys(true).toArray(new String[0]);
-
         //Buttons
-        for (String s : test)
+        String[] getStaff = Main.getMain().getStaffFile().getKeys(true).toArray(new String[0]);
+
+        for (String s : getStaff)
         {
 
-            String[] member = Main.getMain().getStaffFile().getStringList(s).toArray(new String[0]);
+            String[] staffMember = Main.getMain().getStaffFile().getStringList(s).toArray(new String[0]);
 
             registerButton(new MenuButton(new ItemStack(processes.buildSkull(
-                    (processes.color(member[0])),
-                            Collections.singletonList(processes.color(member[1])),
+                    (processes.color(staffMember[0])),
+                            Collections.singletonList(processes.color(staffMember[1])),
                             UUID.fromString(s),
                             1)
-            )), Integer.parseInt(member[2]));
+            )), Integer.parseInt(staffMember[2]));
 
         }
     }

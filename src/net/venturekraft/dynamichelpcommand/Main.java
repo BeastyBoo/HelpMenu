@@ -15,10 +15,6 @@ public class Main extends JavaPlugin
     //Instances
     private final Processes processes = new Processes();
 
-    //File Initialisation
-    private File staffFile;
-    private YamlConfiguration modifyStaffFile;
-
     //Main Instance
     private static Main mainInstance;
 
@@ -42,43 +38,56 @@ public class Main extends JavaPlugin
         }
         catch (IOException e)
         {
-            System.out.println(processes.color("Could NOT create .yml File."));
+            System.out.println(processes.color("&cCould NOT create .yml Files."));
         }
 
         //Main Instance
         mainInstance = this;
     }
 
+    //Main Instance
+    public static Main getMain() { return mainInstance; }
+
     //File Initialisation
-    public File getFile() { return staffFile; }
+    private YamlConfiguration modifyStaffFile;
+    private YamlConfiguration modifyCommandsFile;
+    private YamlConfiguration modifyServerSettingsFile;
+    private YamlConfiguration modifyServerInfoFile;
+    private YamlConfiguration modifyOtherInfoFile;
+    private YamlConfiguration modifyRanksFile;
+
     public YamlConfiguration getStaffFile() { return modifyStaffFile; }
+    public YamlConfiguration getCommandsFile() { return modifyCommandsFile; }
+    public YamlConfiguration getServerSettingsFile() { return modifyServerSettingsFile; }
+    public YamlConfiguration getServerInfoFile() { return modifyServerInfoFile; }
+    public YamlConfiguration getOtherInfoFile() { return modifyOtherInfoFile; }
+    public YamlConfiguration getRanksFile() { return modifyRanksFile; }
 
     public void initiateFiles () throws IOException
     {
-        staffFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "staff.yml");
+        File staffFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "staff.yml");
+        File commandsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "commands.yml");
+        File serverSettingsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "serverSettings.yml");
+        File serverInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "serverInfo.yml");
+        File otherInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "otherInfo.yml");
+        File ranksFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "ranks.yml");
 
-        if (!staffFile.exists())
+        if (!staffFile.exists() || !commandsFile.exists() || !serverSettingsFile.exists() || !serverInfoFile.exists() || !otherInfoFile.exists() || !ranksFile.exists())
         {
             staffFile.createNewFile();
+            commandsFile.createNewFile();
+            serverSettingsFile.createNewFile();
+            serverInfoFile.createNewFile();
+            otherInfoFile.createNewFile();
+            ranksFile.createNewFile();
         }
 
-        modifyStaffFile  = YamlConfiguration.loadConfiguration(staffFile );
+        modifyStaffFile  = YamlConfiguration.loadConfiguration(staffFile);
+        modifyCommandsFile = YamlConfiguration.loadConfiguration(commandsFile);
+        modifyServerSettingsFile = YamlConfiguration.loadConfiguration(serverSettingsFile);
+        modifyServerInfoFile = YamlConfiguration.loadConfiguration(serverInfoFile);
+        modifyOtherInfoFile = YamlConfiguration.loadConfiguration(otherInfoFile);
+        modifyRanksFile = YamlConfiguration.loadConfiguration(ranksFile);
     }
-
-    //Save .yml File.
-    public void saveStaffFile()
-    {
-        try
-        {
-            this.getStaffFile().save(this.getFile());
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    //Main Instance
-    public static Main getMain() { return mainInstance; }
 
 }

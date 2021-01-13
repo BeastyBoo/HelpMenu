@@ -129,7 +129,6 @@ public class Menu
     public void open(Player player)
     {
         MenuManager manager = MenuManager.getInstance();
-        manager.registerMenu(player.getUniqueId(), this);
 
         buttonMap.forEach((slot, button) ->
         {
@@ -138,6 +137,7 @@ public class Menu
 
         // Open the inventory and handle the open event.
         player.openInventory(inventory);
+        manager.registerMenu(player.getUniqueId(), this);
         handleOpen(player);
     }
 
