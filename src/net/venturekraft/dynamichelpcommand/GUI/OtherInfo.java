@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
-public class OtherInfoMenu extends Menu
+public class OtherInfo extends Menu
 {
 
-    public OtherInfoMenu(Player player)
+    public OtherInfo(Player player)
     {
         //Menu initialisation
         super(ChatColor.YELLOW + "Other Info", 1);

@@ -27,10 +27,6 @@ public class Main extends JavaPlugin
         //Events
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
 
-        //Config Access
-        this.getConfig().options().copyDefaults();
-        saveDefaultConfig();
-
         //File Initialisation
         try
         {
@@ -65,12 +61,12 @@ public class Main extends JavaPlugin
 
     public void initiateFiles () throws IOException
     {
-        File staffFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "staff.yml");
-        File commandsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "commands.yml");
-        File serverSettingsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "serverSettings.yml");
-        File serverInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "serverInfo.yml");
-        File otherInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "otherInfo.yml");
-        File ranksFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("DynamicHelpCommand")).getDataFolder(), "ranks.yml");
+        File staffFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "staff.yml");
+        File commandsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "commands.yml");
+        File serverSettingsFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "serverSettings.yml");
+        File serverInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "serverInfo.yml");
+        File otherInfoFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "otherInfo.yml");
+        File ranksFile = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin("HelpMenu")).getDataFolder(), "ranks.yml");
 
         if (!staffFile.exists() || !commandsFile.exists() || !serverSettingsFile.exists() || !serverInfoFile.exists() || !otherInfoFile.exists() || !ranksFile.exists())
         {

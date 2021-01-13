@@ -10,10 +10,10 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Collections;
 import java.util.UUID;
 
-public class StaffMenu extends Menu
+public class Staff extends Menu
 {
 
-    public StaffMenu()
+    public Staff()
     {
         //Menu Initialisation
         super(ChatColor.RED + "Staff", 4);

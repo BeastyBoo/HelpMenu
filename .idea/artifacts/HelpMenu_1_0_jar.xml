@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HelpMenu-1.0:jar">
+    <output-path>$USER_HOME$/Desktop/Plugin Making-Testing Server/plugins</output-path>
+    <root id="archive" name="HelpMenu-1.0.jar">
+      <element id="module-output" name="HelpMenu" />
+    </root>
+  </artifact>
+</component>

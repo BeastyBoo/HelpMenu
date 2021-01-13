@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandsMenu extends Menu
+public class Commands extends Menu
 {
 
-    public CommandsMenu()
+    public Commands()
     {
         //Menu initialisation
         super(ChatColor.BLUE + "Commands", 1);

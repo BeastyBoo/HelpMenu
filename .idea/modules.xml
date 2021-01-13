@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DynamicHelpCommand.iml" filepath="$PROJECT_DIR$/DynamicHelpCommand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelpMenu.iml" filepath="$PROJECT_DIR$/HelpMenu.iml" />
     </modules>
   </component>
 </project>

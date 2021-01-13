@@ -47,7 +47,6 @@ public class Ranks extends Menu
                             1)
             )), Integer.parseInt(Main.getMain().getRanksFile().getStringList(b).get(i - 1)));
         }
-
     }
 
 }

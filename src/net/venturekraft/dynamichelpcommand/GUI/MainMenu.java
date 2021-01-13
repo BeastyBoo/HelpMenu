@@ -23,9 +23,10 @@ public class MainMenu extends Menu
 
         Processes processes = new Processes();
 
-        Menu staffMenu = new StaffMenu();
-        Menu commandsMenu = new CommandsMenu();
-        Menu otherInfo = new OtherInfoMenu(player);
+        Menu profile = new Profile(player);
+        Menu staff = new Staff();
+        Menu commands = new Commands();
+        Menu otherInfo = new OtherInfo(player);
 
         //Buttons
         registerButton(new MenuButton(new ItemStack(processes.buildSkull
@@ -33,21 +34,21 @@ public class MainMenu extends Menu
                 Collections.singletonList(processes.color("&6Information about you.")),
                 player.getUniqueId(),
                 1)
-            )).setWhenClicked(clicked -> clicked.sendMessage("te")), 10);
+            )).setWhenClicked(clicked -> profile.open(player)), 10);
 
         registerButton(new MenuButton(new ItemStack(processes.buildItem
                 (processes.color("&cStaff"),
                 Collections.singletonList(processes.color("&6All the current Staff members.")),
                         Material.GOLD_BLOCK,
                         1)
-            )).setWhenClicked(clicked -> staffMenu.open(player)), 11);
+            )).setWhenClicked(clicked -> staff.open(player)), 11);
 
         registerButton(new MenuButton(new ItemStack(processes.buildItem
                 (processes.color("&9Commands"),
                         Collections.singletonList(processes.color("&6Commands you can execute.")),
                         Material.DIAMOND_BLOCK,
                         1)
-        )).setWhenClicked(clicked -> commandsMenu.open(player)), 12);
+        )).setWhenClicked(clicked -> commands.open(player)), 12);
 
         registerButton(new MenuButton(new ItemStack(processes.buildItem
                 (processes.color("&eOther Info"),
