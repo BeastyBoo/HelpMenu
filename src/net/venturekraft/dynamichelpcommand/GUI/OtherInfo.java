@@ -44,7 +44,7 @@ public class OtherInfo extends Menu
                         websiteLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WebsiteLink")))), 4);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WebsiteLink")))), 5);
 
         List<String> wikiLink = Main.getMain().getOtherInfoFile().getStringList("Wiki");
         List<String> wikiLinkFinal = new ArrayList<>();
@@ -59,7 +59,7 @@ public class OtherInfo extends Menu
                         wikiLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 5);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 6);
 
         registerButton(new MenuButton(new ItemStack(processes.buildItem
                 (processes.color("&eBack"),
