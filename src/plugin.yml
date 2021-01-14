@@ -1,6 +1,6 @@
 name: HelpMenu
 main: net.venturekraft.dynamichelpcommand.Main
-version: 1.0
+version: 1.1
 api-version: 1.16
 commands:
   help:

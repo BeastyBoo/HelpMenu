@@ -1,8 +1,8 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
-import net.venturekraft.dynamichelpcommand.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.Processes;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
+import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
@@ -49,6 +49,13 @@ public class Profile extends Menu
                         Material.ROTTEN_FLESH,
                         1)
         )), 3);
+
+        registerButton(new MenuButton(new ItemStack(processes.buildItem
+                (processes.color("&eBack"),
+                        null,
+                        Material.REDSTONE,
+                        1)
+        )).setWhenClicked(clicked -> new MainMenu(player).open(player)), 8);
     }
 
 }

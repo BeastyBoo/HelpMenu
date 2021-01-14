@@ -1,4 +1,4 @@
-package net.venturekraft.dynamichelpcommand.MenuBuilder;
+package net.venturekraft.dynamichelpcommand.API.MenuBuilder;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 public class MenuButton
 {
 
-    private ItemStack itemStack;
+    private final ItemStack itemStack;
 
     /**
      * Class constructor

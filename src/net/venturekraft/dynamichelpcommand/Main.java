@@ -1,6 +1,7 @@
 package net.venturekraft.dynamichelpcommand;
 
-import net.venturekraft.dynamichelpcommand.MenuBuilder.MenuListener;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuListener;
+import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,7 +13,7 @@ import java.util.Objects;
 public class Main extends JavaPlugin
 {
 
-    //Instances
+    //Constructors
     private final Processes processes = new Processes();
 
     //Main Instance

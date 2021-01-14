@@ -1,9 +1,9 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
 import net.venturekraft.dynamichelpcommand.Main;
-import net.venturekraft.dynamichelpcommand.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.Processes;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
+import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -19,7 +19,7 @@ public class OtherInfo extends Menu
         //Menu initialisation
         super(ChatColor.YELLOW + "Other Info", 1);
 
-        Menu ranks = new Ranks();
+        Menu ranks = new Ranks(player);
 
         Processes processes = new Processes();
 
@@ -44,7 +44,7 @@ public class OtherInfo extends Menu
                         websiteLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WebsiteLink")))), 7);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WebsiteLink")))), 4);
 
         List<String> wikiLink = Main.getMain().getOtherInfoFile().getStringList("Wiki");
         List<String> wikiLinkFinal = new ArrayList<>();
@@ -59,7 +59,14 @@ public class OtherInfo extends Menu
                         wikiLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 8);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 5);
+
+        registerButton(new MenuButton(new ItemStack(processes.buildItem
+                (processes.color("&eBack"),
+                        null,
+                        Material.REDSTONE,
+                        1)
+        )).setWhenClicked(clicked -> new MainMenu(player).open(player)), 8);
     }
 
 }

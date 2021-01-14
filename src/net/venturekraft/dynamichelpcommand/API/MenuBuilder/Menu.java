@@ -1,4 +1,4 @@
-package net.venturekraft.dynamichelpcommand.MenuBuilder;
+package net.venturekraft.dynamichelpcommand.API.MenuBuilder;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 public class Menu
 {
 
-    private Inventory inventory;
+    private final Inventory inventory;
 
     /**
      * Menu constructor.
@@ -33,7 +33,7 @@ public class Menu
         this.buttonMap = new HashMap<>();
     }
 
-    private Map<Integer, MenuButton> buttonMap;
+    private final Map<Integer, MenuButton> buttonMap;
 
     /**
      * Registers a button in a specified slot.
@@ -130,10 +130,7 @@ public class Menu
     {
         MenuManager manager = MenuManager.getInstance();
 
-        buttonMap.forEach((slot, button) ->
-        {
-            inventory.setItem(slot, button.getItemStack());
-        });
+        buttonMap.forEach((slot, button) -> inventory.setItem(slot, button.getItemStack()));
 
         // Open the inventory and handle the open event.
         player.openInventory(inventory);

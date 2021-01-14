@@ -1,4 +1,4 @@
-package net.venturekraft.dynamichelpcommand.MenuBuilder;
+package net.venturekraft.dynamichelpcommand.API.MenuBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +53,5 @@ public class MenuManager
      * @return The Menu found, or null if it does not exist.
      */
     public Menu matchMenu(UUID user) { return openMenus.get(user); }
-
 
 }

@@ -1,10 +1,12 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
 import net.venturekraft.dynamichelpcommand.Main;
-import net.venturekraft.dynamichelpcommand.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.Processes;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
+import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
+import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Collections;
@@ -13,7 +15,7 @@ import java.util.UUID;
 public class Staff extends Menu
 {
 
-    public Staff()
+    public Staff(Player player)
     {
         //Menu Initialisation
         super(ChatColor.RED + "Staff", 4);
@@ -36,6 +38,13 @@ public class Staff extends Menu
             )), Integer.parseInt(staffMember[2]));
 
         }
+
+        registerButton(new MenuButton(new ItemStack(processes.buildItem
+                (processes.color("&eBack"),
+                        null,
+                        Material.REDSTONE,
+                        1)
+        )).setWhenClicked(clicked -> new MainMenu(player).open(player)), 35);
     }
 
 }
