@@ -1,9 +1,9 @@
-package net.venturekraft.dynamichelpcommand.GUI;
+package net.venturekraft.helpmenu.GUI;
 
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.dynamichelpcommand.Main;
+import net.venturekraft.helpmenu.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -28,6 +28,7 @@ public class MainMenu extends Menu
                 player.getUniqueId(),
                 1)
             )).setWhenClicked(clicked -> new Profile(player).open(player)), 10);
+
         registerButton(new MenuButton(new ItemStack(Processes.buildItem
                 (Processes.color("&cStaff"),
                 Collections.singletonList(Processes.color("&6All the current Staff members.")),

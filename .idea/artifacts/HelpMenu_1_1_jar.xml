@@ -3,6 +3,7 @@
     <output-path>$USER_HOME$/Desktop/Plugin Making-Testing Server/plugins</output-path>
     <root id="archive" name="HelpMenu-1.1.jar">
       <element id="module-output" name="HelpMenu" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/VentureKraftAPI-1.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

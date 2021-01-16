@@ -1,4 +1,4 @@
-package net.venturekraft.dynamichelpcommand;
+package net.venturekraft.helpmenu;
 
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuListener;
 import net.venturekraft.VentureKraftAPI.Processes;
@@ -19,6 +19,7 @@ public class Main extends JavaPlugin
     @Override
     public void onEnable()
     {
+
         //Commands
         Objects.requireNonNull(getCommand("help")).setExecutor(new HelpCommand());
 

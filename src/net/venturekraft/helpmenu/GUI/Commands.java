@@ -1,9 +1,9 @@
-package net.venturekraft.dynamichelpcommand.GUI;
+package net.venturekraft.helpmenu.GUI;
 
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.dynamichelpcommand.Main;
+import net.venturekraft.helpmenu.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

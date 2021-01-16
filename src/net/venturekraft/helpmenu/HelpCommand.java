@@ -1,7 +1,7 @@
-package net.venturekraft.dynamichelpcommand;
+package net.venturekraft.helpmenu;
 
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.GUI.MainMenu;
+import net.venturekraft.helpmenu.GUI.MainMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,6 +19,7 @@ public class HelpCommand implements CommandExecutor
 
             Menu mainMenu = new MainMenu(player);
             mainMenu.open(player);
+
         }
 
         return false;
