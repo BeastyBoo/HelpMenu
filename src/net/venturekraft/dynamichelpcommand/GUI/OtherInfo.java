@@ -1,9 +1,9 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
+import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
+import net.venturekraft.VentureKraftAPI.Processes;
 import net.venturekraft.dynamichelpcommand.Main;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,12 +21,10 @@ public class OtherInfo extends Menu
 
         Menu ranks = new Ranks(player);
 
-        Processes processes = new Processes();
-
         //Buttons
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&5Ranks"),
-                        Collections.singletonList(processes.color("&6All the server ranks.")),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&5Ranks"),
+                        Collections.singletonList(Processes.color("&6All the server ranks.")),
                         Material.EMERALD,
                         1)
         )).setWhenClicked(clicked -> ranks.open(player)), 0);
@@ -36,11 +34,11 @@ public class OtherInfo extends Menu
 
         for(String w : websiteLink)
         {
-            websiteLinkFinal.add(processes.color(w));
+            websiteLinkFinal.add(Processes.color(w));
         }
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Website"),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Website"),
                         websiteLinkFinal,
                         Material.PAPER,
                         1)
@@ -51,18 +49,18 @@ public class OtherInfo extends Menu
 
         for(String w : wikiLink)
         {
-            websiteLinkFinal.add(processes.color(w));
+            wikiLinkFinal.add(Processes.color(w));
         }
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Wiki"),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Wiki"),
                         wikiLinkFinal,
                         Material.PAPER,
                         1)
         )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 6);
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&eBack"),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&eBack"),
                         null,
                         Material.REDSTONE,
                         1)

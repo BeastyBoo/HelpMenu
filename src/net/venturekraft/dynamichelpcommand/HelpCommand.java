@@ -1,7 +1,7 @@
 package net.venturekraft.dynamichelpcommand;
 
+import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.dynamichelpcommand.GUI.MainMenu;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

@@ -1,8 +1,8 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.API.Processes;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
+import net.venturekraft.VentureKraftAPI.Processes;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
@@ -19,39 +19,36 @@ public class Profile extends Menu
         //Menu Initialisation
         super(ChatColor.YELLOW + "Profile", 1);
 
-        Processes processes = new Processes();
-
         //Buttons
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Time Played"),
-                        Collections.singletonList(processes.color("&f" + player.getStatistic(Statistic.PLAY_ONE_MINUTE) / (60 * 60 * 20) + " Hours")),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Time Played"),
+                        Collections.singletonList(Processes.color("&f" + player.getStatistic(Statistic.PLAY_ONE_MINUTE) / (60 * 60 * 20) + " Hours")),
                         Material.CLOCK,
                         1)
         )), 0);
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Number Of Deaths"),
-                        Collections.singletonList(processes.color("&f" + player.getStatistic(Statistic.DEATHS))),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Number Of Deaths"),
+                        Collections.singletonList(Processes.color("&f" + player.getStatistic(Statistic.DEATHS))),
                         Material.SKELETON_SKULL,
                         1)
         )), 1);
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Players Killed"),
-                        Collections.singletonList(processes.color("&f" + player.getStatistic(Statistic.PLAYER_KILLS))),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Players Killed"),
+                        Collections.singletonList(Processes.color("&f" + player.getStatistic(Statistic.PLAYER_KILLS))),
                         Material.ARMOR_STAND,
                         1)
         )), 2);
-
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&9Mobs Killed"),
-                        Collections.singletonList(processes.color("&f" + player.getStatistic(Statistic.MOB_KILLS))),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&9Mobs Killed"),
+                        Collections.singletonList(Processes.color("&f" + player.getStatistic(Statistic.MOB_KILLS))),
                         Material.ROTTEN_FLESH,
                         1)
         )), 3);
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&eBack"),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&eBack"),
                         null,
                         Material.REDSTONE,
                         1)

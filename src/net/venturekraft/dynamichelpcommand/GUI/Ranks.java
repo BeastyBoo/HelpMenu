@@ -1,9 +1,9 @@
 package net.venturekraft.dynamichelpcommand.GUI;
 
+import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
+import net.venturekraft.VentureKraftAPI.Processes;
 import net.venturekraft.dynamichelpcommand.Main;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.Menu;
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuButton;
-import net.venturekraft.dynamichelpcommand.API.Processes;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -20,8 +20,6 @@ public class Ranks extends Menu
         //Menu initialisation
         super(ChatColor.DARK_PURPLE + "Ranks", 3);
 
-        Processes processes = new Processes();
-
         //Buttons
         String[] getButtons = Main.getMain().getRanksFile().getKeys(true).toArray(new String[0]);
 
@@ -33,7 +31,7 @@ public class Ranks extends Menu
             int i = 0;
             for (String r : rankLore)
             {
-                rankLoreFinal.add(processes.color(r));
+                rankLoreFinal.add(Processes.color(r));
                 i++;
             }
 
@@ -41,16 +39,16 @@ public class Ranks extends Menu
             rankLoreFinal.remove(1);
             rankLoreFinal.remove(0);
 
-            registerButton(new MenuButton(new ItemStack(processes.buildItem
-                    (processes.color(rankLore.get(0)),
+            registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                    (Processes.color(rankLore.get(0)),
                             rankLoreFinal,
                             Material.valueOf(rankLore.get(1)),
                             1)
             )), Integer.parseInt(Main.getMain().getRanksFile().getStringList(b).get(i - 1)));
         }
 
-        registerButton(new MenuButton(new ItemStack(processes.buildItem
-                (processes.color("&eBack"),
+        registerButton(new MenuButton(new ItemStack(Processes.buildItem
+                (Processes.color("&eBack"),
                         null,
                         Material.REDSTONE,
                         1)

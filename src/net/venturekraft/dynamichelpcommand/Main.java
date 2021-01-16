@@ -1,7 +1,7 @@
 package net.venturekraft.dynamichelpcommand;
 
-import net.venturekraft.dynamichelpcommand.API.MenuBuilder.MenuListener;
-import net.venturekraft.dynamichelpcommand.API.Processes;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuListener;
+import net.venturekraft.VentureKraftAPI.Processes;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,9 +12,6 @@ import java.util.Objects;
 
 public class Main extends JavaPlugin
 {
-
-    //Constructors
-    private final Processes processes = new Processes();
 
     //Main Instance
     private static Main mainInstance;
@@ -35,7 +32,7 @@ public class Main extends JavaPlugin
         }
         catch (IOException e)
         {
-            System.out.println(processes.color("&cCould NOT create .yml Files."));
+            System.out.println(Processes.color("&cCould NOT create .yml Files."));
         }
 
         //Main Instance
