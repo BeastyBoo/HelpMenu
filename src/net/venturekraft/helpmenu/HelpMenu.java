@@ -48,6 +48,62 @@ public class HelpMenu extends JavaPlugin
         initiateFiles();
     }
 
+    public static HelpMenu getHelpMenuInstance() {
+        return helpMenuInstance;
+    }
+
+    public static void setHelpMenuInstance(HelpMenu helpMenuInstance) {
+        HelpMenu.helpMenuInstance = helpMenuInstance;
+    }
+
+    public FileObject getStaffFile() {
+        return staffFile;
+    }
+
+    public void setStaffFile(FileObject staffFile) {
+        this.staffFile = staffFile;
+    }
+
+    public FileObject getCommandsFile() {
+        return commandsFile;
+    }
+
+    public void setCommandsFile(FileObject commandsFile) {
+        this.commandsFile = commandsFile;
+    }
+
+    public FileObject getServerSettingsFile() {
+        return serverSettingsFile;
+    }
+
+    public void setServerSettingsFile(FileObject serverSettingsFile) {
+        this.serverSettingsFile = serverSettingsFile;
+    }
+
+    public FileObject getServerInfoFile() {
+        return serverInfoFile;
+    }
+
+    public void setServerInfoFile(FileObject serverInfoFile) {
+        this.serverInfoFile = serverInfoFile;
+    }
+
+    public FileObject getOtherInfoFile() {
+        return otherInfoFile;
+    }
+
+    public void setOtherInfoFile(FileObject otherInfoFile) {
+        this.otherInfoFile = otherInfoFile;
+    }
+
+    public FileObject getRanksFile() {
+        return ranksFile;
+    }
+
+    public void setRanksFile(FileObject ranksFile) {
+        this.ranksFile = ranksFile;
+    }
+
     //Main Instance
     public static HelpMenu getMain() { return helpMenuInstance; }
 
