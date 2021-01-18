@@ -3,7 +3,7 @@ package net.venturekraft.helpmenu.GUI;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.helpmenu.Main;
+import net.venturekraft.helpmenu.HelpMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -50,7 +50,7 @@ public class MainMenu extends Menu
                         1)
         )).setWhenClicked(clicked -> new OtherInfo(player).open(player)), 13);
 
-        List<String> serverSettings = Main.getMain().getServerSettingsFile().getStringList("ServerSettings");
+        List<String> serverSettings = HelpMenu.getMain().getServerSettingsFile().getStringList("ServerSettings");
         List<String> serverSettingsFinal = new ArrayList<>();
 
         for(String s : serverSettings)
@@ -65,7 +65,7 @@ public class MainMenu extends Menu
                         1)
         )), 15);
 
-        List<String> serverInfo = Main.getMain().getServerInfoFile().getStringList("ServerInfo");
+        List<String> serverInfo = HelpMenu.getMain().getServerInfoFile().getStringList("ServerInfo");
         List<String> serverInfoFinal = new ArrayList<>();
 
         for(String s : serverInfo)

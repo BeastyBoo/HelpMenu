@@ -3,7 +3,7 @@ package net.venturekraft.helpmenu.GUI;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.helpmenu.Main;
+import net.venturekraft.helpmenu.HelpMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -29,7 +29,7 @@ public class OtherInfo extends Menu
                         1)
         )).setWhenClicked(clicked -> ranks.open(player)), 0);
 
-        List<String> websiteLink = Main.getMain().getOtherInfoFile().getStringList("Website");
+        List<String> websiteLink = HelpMenu.getMain().getOtherInfoFile().getStringList("Website");
         List<String> websiteLinkFinal = new ArrayList<>();
 
         for(String w : websiteLink)
@@ -42,9 +42,9 @@ public class OtherInfo extends Menu
                         websiteLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WebsiteLink")))), 5);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(HelpMenu.getMain().getOtherInfoFile().getString("WebsiteLink")))), 5);
 
-        List<String> wikiLink = Main.getMain().getOtherInfoFile().getStringList("Wiki");
+        List<String> wikiLink = HelpMenu.getMain().getOtherInfoFile().getStringList("Wiki");
         List<String> wikiLinkFinal = new ArrayList<>();
 
         for(String w : wikiLink)
@@ -57,7 +57,7 @@ public class OtherInfo extends Menu
                         wikiLinkFinal,
                         Material.PAPER,
                         1)
-        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(Main.getMain().getOtherInfoFile().getString("WikiLink")))), 6);
+        )).setWhenClicked(clicked -> clicked.sendMessage(Objects.requireNonNull(HelpMenu.getMain().getOtherInfoFile().getString("WikiLink")))), 6);
 
         registerButton(new MenuButton(new ItemStack(Processes.buildItem
                 (Processes.color("&eBack"),

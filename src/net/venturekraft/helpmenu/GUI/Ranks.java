@@ -3,7 +3,7 @@ package net.venturekraft.helpmenu.GUI;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.helpmenu.Main;
+import net.venturekraft.helpmenu.HelpMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,11 +21,11 @@ public class Ranks extends Menu
         super(ChatColor.DARK_PURPLE + "Ranks", 3);
 
         //Buttons
-        String[] getButtons = Main.getMain().getRanksFile().getKeys(true).toArray(new String[0]);
+        String[] getButtons = HelpMenu.getMain().getRanksFile().getKeys(true).toArray(new String[0]);
 
         for(String b : getButtons)
         {
-            List<String> rankLore = Main.getMain().getRanksFile().getStringList(b);
+            List<String> rankLore = HelpMenu.getMain().getRanksFile().getStringList(b);
             List<String> rankLoreFinal = new ArrayList<>();
 
             int i = 0;
@@ -44,7 +44,7 @@ public class Ranks extends Menu
                             rankLoreFinal,
                             Material.valueOf(rankLore.get(1)),
                             1)
-            )), Integer.parseInt(Main.getMain().getRanksFile().getStringList(b).get(i - 1)));
+            )), Integer.parseInt(HelpMenu.getMain().getRanksFile().getStringList(b).get(i - 1)));
         }
 
         registerButton(new MenuButton(new ItemStack(Processes.buildItem

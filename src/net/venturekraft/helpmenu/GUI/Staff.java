@@ -3,7 +3,7 @@ package net.venturekraft.helpmenu.GUI;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.Menu;
 import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuButton;
 import net.venturekraft.VentureKraftAPI.Processes;
-import net.venturekraft.helpmenu.Main;
+import net.venturekraft.helpmenu.HelpMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,12 +21,12 @@ public class Staff extends Menu
         super(ChatColor.RED + "Staff", 4);
 
         //Buttons
-        String[] getStaff = Main.getMain().getStaffFile().getKeys(true).toArray(new String[0]);
+        String[] getStaff = HelpMenu.getMain().getStaffFile().getKeys(true).toArray(new String[0]);
 
         for (String s : getStaff)
         {
 
-            String[] staffMember = Main.getMain().getStaffFile().getStringList(s).toArray(new String[0]);
+            String[] staffMember = HelpMenu.getMain().getStaffFile().getStringList(s).toArray(new String[0]);
 
             registerButton(new MenuButton(new ItemStack(Processes.buildSkull(
                     (Processes.color(staffMember[0])),
